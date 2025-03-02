@@ -7,7 +7,7 @@ export default async function HomePage() {
 
   return (
     <>
-      <header className="sticky top-0 left-0 w-full max-w-screen-sm bg-mehroonish text-white p-4 text-center">
+      <header className="sticky z-20 top-0 left-0 w-full max-w-screen-sm bg-mehroonish text-white p-4 text-center">
         Activities
       </header>
 

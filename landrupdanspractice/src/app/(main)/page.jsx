@@ -2,6 +2,7 @@ import { getAllActivities } from "@/lib/server-fetch";
 import NotFoundPage from "../not-found";
 import ActivityCard from "./activity-card";
 import Footer from "./Footer";
+import Link from "next/link";
 export default async function HomePage() {
   const activities = await getAllActivities();
 
@@ -13,7 +14,9 @@ export default async function HomePage() {
 
       <main className="h-[150vh] mt-4 w-full max-w-screen-sm">
         {activities.map((activity) => (
-          <ActivityCard key={activity.id} activity={activity} />
+          <Link href={`/${activity.id}`} key={activity.id}>
+            <ActivityCard activity={activity} />
+          </Link>
         ))}
       </main>
       <Footer />

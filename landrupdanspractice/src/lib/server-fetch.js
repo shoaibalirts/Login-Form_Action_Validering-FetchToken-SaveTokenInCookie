@@ -19,6 +19,18 @@ export async function getAllActivities() {
   }
 }
 
+export async function getActivityDetails(id) {
+  try {
+    const response = await fetch(`http://localhost:4000/api/v1/activities/${id}`);
+    console.log(response);
+    
+    fetchErrorHandling(response);
+    const activitiDetail = await response.json();
+    return activitiDetail;
+  } catch (error) {
+    throw new Error(error);
+  }
+}
 export async function gettoken(username, password) {
   try {
     const response = await fetch("http://localhost:4000/auth/token", {

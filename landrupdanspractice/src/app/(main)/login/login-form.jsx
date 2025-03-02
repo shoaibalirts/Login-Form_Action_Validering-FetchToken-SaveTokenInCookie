@@ -36,7 +36,13 @@ export default function LoginForm() {
           <span>{formState?.errors?.password?._errors[0]}</span>
         </label>
       </div>
-      <button type="submit">Log ind</button>
+      <button 
+        type="submit" 
+        disabled={isPending?true:false}
+        className="bg-purple-600 text-white disabled:bg-gray-400 disabled:text-black"
+        >
+        {isPending?"Logger ind":"Log ind"}
+        </button>
     </form>
   );
 }

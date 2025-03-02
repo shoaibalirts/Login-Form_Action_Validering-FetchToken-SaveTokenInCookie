@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 
 export default function middleware(request) {
   
-const tokenCookie = request.cookies.has("cookieToken");
+const tokenCookie = request.cookies.has("landrup_token");
 
   if (!tokenCookie){
     return NextResponse.redirect(new URL("/login", request.url));
